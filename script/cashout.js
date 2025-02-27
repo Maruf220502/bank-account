@@ -10,11 +10,18 @@ document.getElementById('cash-out-btn')
     const mainBalance = document.getElementById('main-balance').innerText;
     const convertedMainBalance = parseFloat(mainBalance);
 
-    if(convertedPin === 1234){
-        const sum = convertedMainBalance - convertedAmount;
-        document.getElementById('main-balance').innerText = sum;
+    const agentNumber = document.getElementById('agent-number').value;
+
+    if(agentNumber.length === 11){
+        if(convertedPin === 1234){
+            const sum = convertedMainBalance - convertedAmount;
+            document.getElementById('main-balance').innerText = sum;
+        }
+        else{
+            alert("enter valid pin")
+        }
     }
     else{
-        alert("enter valid pin")
+        alert(' enter valid agent number')
     }
 })

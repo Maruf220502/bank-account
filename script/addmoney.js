@@ -10,11 +10,19 @@ document.getElementById('add-money')
     const pinNumber =document.getElementById('pin').value
     const convertedPin = parseInt(pinNumber);
 
-    if( convertedPin === 1234){
-        const newBalance = convertedAddMoney + convertedMainBalance;
-        document.getElementById('main-balance').innerText = newBalance;
+    const accountNumber = document.getElementById('account-number').value;
+    // const convertedaccountNumber = parseInt(accountNumber);
+
+    if(accountNumber.length === 11){
+        if( convertedPin === 1234){
+            const newBalance = convertedAddMoney + convertedMainBalance;
+            document.getElementById('main-balance').innerText = newBalance;
+        }
+        else{
+            alert('enter your valid pin')
+        }
     }
     else{
-        alert('recheck')
+        alert('Plese enter your valid account number')
     }
 })
